@@ -28,7 +28,7 @@
 
 
 function  generateSingl(n){
-    let res = n % 10
+   
     let botl = ''
     if((5 <= n % 10) && (n % 10 <= 10)){
         botl = (`${n} бутылок`)
@@ -36,27 +36,28 @@ function  generateSingl(n){
         botl = (`${n} бутылки`)
     } else if (n==1){
         botl = (`${n} бутылка`)
-    }else if (n==0){
+    }else if (n % 10 === 0 ){
         botl = (`${n} бутылок`)
     } else if (4 < n && n < 21){
         botl = (`${n} бутылок`)
     } else if (1 === n % 10){
         botl = (`${n} бутылка`)
-    }
+    } 
+    
+    
     return botl
 }
-
-// function generateSingleStanza (n) {
-//     console.log(`${generateSingl(n)} пива на стене, ${generateSingl(n)} пива, 
-//     Возьми одну, пусти по кругу,  ${generateSingl(n-1)} пива на стене`)
-// }
-
-// generateSingleStanza(99)
-
   function generate(n) {
     for (let i = 1; i <=n; n--){
+       if(n===1){
         console.log(`${generateSingl(n)} пива на стене, ${generateSingl(n)} пива, 
-Возьми одну, пусти по кругу,  ${generateSingl(n-1)} пива на стене`)
+        Возьми одну, пусти по кругу, нет бутылок на стене`)
+       } else{
+        console.log(`${generateSingl(n)} пива на стене, ${generateSingl(n)} пива, 
+        Возьми одну, пусти по кругу,  ${generateSingl(n-1)} пива на стене, нет бутылок на стене`)
+       
+       }
+       
     }
 }
 
